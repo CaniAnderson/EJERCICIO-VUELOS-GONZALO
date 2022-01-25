@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Elegir Avión</title>
 </head>
 <body>
-    
+    <form method="post" action="4eAvion2.php">
+        <fieldset>
+        <legend>Estadísticas del Avión</legend><br>
+
+        <label>Elija un avión:</label>
+                <select name="vuelo">
+                    <option hidden selected>Selecciona una opción</option>
+                    <option value="Vueling-AE12">Vueling-AE12</option>
+                    <option value="Volotea-EA21">Volotea-EA21</option>
+                    <option value="Iberia-WE44">Iberia-WE44</option>
+                    <option value="Ryanair-EW44">Ryanair-EW44</option>
+                    <option value="Vueling-ZK87">Vueling-ZK87</option>
+                    <option value="Volotea-UA21">Volotea-UA21</option>
+                    <option value="Iberia-WH44">Iberia-WH44</option>
+                    <option value="Ryanair-EL00">Ryanair-EL00</option>
+                </select>
+
+        <p><input type="submit" value="Enviar" name="resolver">
+            <input type="reset" value="Reset" name="reset"></p>
+        </fieldset><br>
+    </form>
 </body>
 </html>

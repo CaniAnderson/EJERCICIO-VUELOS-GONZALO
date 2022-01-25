@@ -63,4 +63,20 @@ $vueloPasajeros=array(
     array("Vuelo" => "Vueling-ZK87","Pasajeros" => "82" )
 );
 
+$holamilan=0;
+$holaroma=0;
+$holaestambul=0;
+$holamadriz=0;
+$holalima=0;
+$holabilbado=0;
+
+$maxminciudad=array(
+    array("Num" => $holamilan, "Ciudad" => "Milán" ),
+    array("Num" => $holaroma,"Ciudad" => "Roma" ),
+    array("Num" => $holaestambul, "Ciudad" => "Estambul" ),
+    array("Num" => $holamadriz, "Ciudad" => "Madrid" ),
+    array("Num" => $holalima, "Ciudad" => "Lima" ),
+    array("Num" => $holabilbado, "Ciudad" => "Bilbao" )
+);
+
 ?>

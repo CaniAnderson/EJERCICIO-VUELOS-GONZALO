@@ -4,11 +4,11 @@ include_once "arraysDB.php";
 include_once "funciones.php";
 $var1=$_POST["vuelo"];
 
-echo "Vuelo: ". $var1 . "<br>";
+echo "<h2>Vuelo: ". $var1 ."</h2>";
 
 mediaPasajeros($var1,$vueloPasajeros);
 ultimosDestinos($var1,$vueloDestino);
-fabricante($var1,$vueloFabricante);
+manufact($var1,$vueloFabricante);
 minutosTotales($var1,$vueloDuracion);
 
 ?>

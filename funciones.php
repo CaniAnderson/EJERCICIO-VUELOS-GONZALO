@@ -17,7 +17,9 @@ function mediaPasajeros($var1,$vueloPasajeros){
         }
     }
     $totalpasajeros=$totalpasajeros/$num;
-    echo "La media de pasajeros es: ".$totalpasajeros."<br>";
+    echo "La media de pax es: ".$totalpasajeros."<br>";
+
+    echo "<br>";
 }
 
 
@@ -29,11 +31,13 @@ function ultimosDestinos($var1,$vueloDestino){
         if ($vuelo==$var1) {
          echo "La última ciudad visitada es: ". $ciudad."<br>";
         }
-}
+    }
+
+    echo "<br>";
 }
 
 
-function fabricante($var1,$vueloFabricante){
+function manufact($var1,$vueloFabricante){
     foreach ($vueloFabricante as $manufact) {
         $fabricante=$manufact["Fabricante"];
         $vuelo=$manufact["Vuelo"];
@@ -43,6 +47,8 @@ function fabricante($var1,$vueloFabricante){
         }
         
     }
+
+    echo "<br>";
 }
 
 
@@ -57,9 +63,9 @@ function minutosTotales($var1,$vueloDuracion){
         }
     }
     echo "Los minutos totales son: ".$num."<br>";
+
+    echo "<br>";
 }
-
-
 
 //Funciones 2eCiudades.php
 
@@ -125,9 +131,75 @@ function statciudad($maxminciudad){
 
     echo "<br>"."<br>";
 }
+
 //Funciones 3eApt.php
 
+function mediahorasvuelos($vueloDuracion){
+    $totalpasajeros=0;
+    $num=0;
+    foreach ($vueloDuracion as $pasajerosf) {
+        $vuelo=$pasajerosf["Vuelo"];
+        $pax=$pasajerosf["Minutos"];
+        $totalpasajeros=$totalpasajeros+$pax;
+        $num++;
+    }
+    $totalpasajeros=$totalpasajeros/$num/60;
+   
+    echo "Media de horas voladas: ".$totalpasajeros."<br>";
 
+    echo "<br>";
+}   
+
+$totalpasajeros=0;
+function todospasajeros($vueloPasajeros,$totalpasajeros){
+    foreach ($vueloPasajeros as $pasajerosf) {
+        $pax=$pasajerosf["Pasajeros"];
+        $totalpasajeros=$totalpasajeros+$pax;
+    }
+   
+    echo "Total de pasajeros de los vuelos: ".$totalpasajeros."<br>";
+
+    echo "<br>";
+}
+
+function fabricantes($vueloFabricante){
+    $boeing=0;
+    $airbus=0;
+    foreach ($vueloFabricante as $manufact) {
+        $fabricante=$manufact["Fabricante"];
+
+        if ($fabricante=="Boeing") {
+            $boeing++;
+        } elseif ($fabricante=="Airbus"){
+            $airbus++;
+        }
+        
+    }
+    echo "Aviones Boeing: ".$boeing."<br>";
+    echo "Aviones Airbus: ".$airbus."<br>";
+
+    echo "<br>";
+}
+
+function ciudadconex($maxminciudad){
+
+    rsort($maxminciudad);
+    echo "Destino con más conexiones: ";
+    $maxarray=(array_column($maxminciudad, "Ciudad"));
+    $maxvisit=$maxarray[0];
+    echo $maxvisit."<br>";
+
+    echo "<br>";
+
+    echo "Destino con menos conexiones: ";
+    $minarray = array_slice($maxminciudad, 2,5);
+    foreach ($minarray as $eljose) {
+        $minvisit=$eljose["Ciudad"];
+        echo $minvisit."-";
+    }
+
+    echo "<br>"."<br>";
+}
 
 //Funciones 4eAvion.php
 

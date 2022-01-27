@@ -17,7 +17,7 @@ function mediaPasajeros($var1,$vueloPasajeros){
         }
     }
     $totalpasajeros=$totalpasajeros/$num;
-    echo "La media de pax es: ".$totalpasajeros."<br>";
+    echo "Media de pasajeros: ".$totalpasajeros."<br>";
 
     echo "<br>";
 }
@@ -43,7 +43,7 @@ function manufact($var1,$vueloFabricante){
         $vuelo=$manufact["Vuelo"];
 
         if ($vuelo==$var1) {
-            echo "El fabricante de este avión es: ". $fabricante."<br>";
+            echo "El fabricante del avión es: ". $fabricante."<br>";
         }
         
     }
@@ -62,7 +62,7 @@ function minutosTotales($var1,$vueloDuracion){
             $num=$num+$time;
         }
     }
-    echo "Los minutos totales son: ".$num."<br>";
+    echo "Minutos totales de vuelo: ".$num."<br>";
 
     echo "<br>";
 }
@@ -203,7 +203,53 @@ function ciudadconex($maxminciudad){
 
 //Funciones 4eAvion.php
 
+function destinosAvion($var1,$vueloDestino){
+    foreach ($vueloDestino as $city) {
+     $vuelo=$city["Vuelo"];
+     $ciudad=$city["Destino"];
 
+        if ($vuelo==$var1) {
+         echo "Destino/s del avión: ". $ciudad."<br>";
+        }
+    }
 
+    echo "<br>";
+}
 
+function mediaHhoras($var1,$vueloDuracion){
+    $num=0;
+    $totalpasajeros=0;
+    foreach ($vueloDuracion as $pasajerosf) {
+        $vuelo=$pasajerosf["Vuelo"];
+        $pax=$pasajerosf["Minutos"];
+        if ($vuelo==$var1) {
+            
+           $totalpasajeros=$totalpasajeros+$pax;
+            $num++;
+        }
+    }
+    $totalpasajeros=$totalpasajeros/$num/60;
+   
+    echo "Media de horas voladas: ".$totalpasajeros."<br>";
+
+    echo "<br>";
+}   
+
+function totalPasajeros($var1,$vueloPasajeros){
+    $totalpasajeros=0;
+    
+    foreach ($vueloPasajeros as $pasajerosf) {
+        $vuelo=$pasajerosf["Vuelo"];
+        $pax=$pasajerosf["Pasajeros"];
+        if ($vuelo==$var1) {
+            
+           $totalpasajeros=$totalpasajeros+$pax;
+           
+        }
+    }
+   
+    echo "Total de pasajeros: ".$totalpasajeros."<br>";
+
+    echo "<br>";
+}
 ?>
